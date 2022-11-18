@@ -9,7 +9,7 @@ import static constants.Constants.TimeoutVariable.EXPLICIT_WAIT;
 
 public class CommonActions {
 
-    public static void waitElementIsVisible(By locator) {
+    public static void waitForElementVisibility(By locator) {
         new WebDriverWait(BaseTest.getWebDriverInstance(), EXPLICIT_WAIT)
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
     }

@@ -19,13 +19,12 @@ public class AddProductToCartTest extends BaseTest {
         homePageService = new HomePageService();
         resultsOfSearchService = homePageService.searchProduct("Christmas tree");
         resultsOfSearchService.chooseCategory("Дом и сад");
-        resultsOfSearchService.sortProducts();
+        resultsOfSearchService.sortProducts("Сначала дорогие");
         resultsOfSearchService.addFirstProductToCart();
         Product actualSearchedProduct = resultsOfSearchService.getSearchedProduct();
         Assert.assertEquals(actualSearchedProduct, expectedProduct);
         cartService = resultsOfSearchService.goToCartPage();
 
-        cartService.closeWindow();
         Product actualProductInCart = cartService.getActualProduct();
         Assert.assertEquals(actualProductInCart, expectedProduct);
     }

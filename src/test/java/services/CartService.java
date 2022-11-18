@@ -7,12 +7,8 @@ import pages.cart.Product;
 public class CartService {
     CartPage cartPage;
 
-    public void closeWindow() {
-        cartPage = new CartPage();
-        cartPage.closeWindow();
-    }
-
     public Product getActualProduct() {
+        cartPage = new CartPage();
         String productPrice = cartPage.getProductPrice();
         String productPriceBeforeDiscount = cartPage.getProductPriceBeforeDiscount();
 

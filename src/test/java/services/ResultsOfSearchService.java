@@ -2,15 +2,16 @@ package services;
 
 import org.apache.commons.lang3.StringUtils;
 import pages.ResultsOfSearchPage;
+import pages.cart.CartPage;
 import pages.cart.Product;
 
 public class ResultsOfSearchService {
     ResultsOfSearchPage resultsOfSearchPage;
 
-    public void sortProducts() {
+    public void sortProducts(String sortOptionName) {
         resultsOfSearchPage = new ResultsOfSearchPage();
         resultsOfSearchPage.clickOnSortList();
-        resultsOfSearchPage.chooseSortParameter();
+        resultsOfSearchPage.chooseSortParameter(sortOptionName);
     }
 
     public void chooseCategory(String categoryName) {
@@ -24,6 +25,7 @@ public class ResultsOfSearchService {
 
     public CartService goToCartPage() {
         resultsOfSearchPage.goToCart();
+        resultsOfSearchPage.closeOfferWindow();
         return new CartService();
     }
 

@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constants.TimeoutVariable.IMPLICIT_WAIT;
-import static constants.Constants.Urls.UDEMY_HOME_PAGE;
+import static constants.Constants.Urls.OZON_HOME_PAGE;
 
 public class BaseTest {
     private static WebDriver driver;
@@ -29,7 +29,7 @@ public class BaseTest {
     @BeforeClass
     public void setUp() {
         driver = getWebDriverInstance();
-        driver.get(UDEMY_HOME_PAGE);
+        driver.get(OZON_HOME_PAGE);
     }
 
     @AfterTest
@@ -43,8 +43,6 @@ public class BaseTest {
 
     @AfterSuite(alwaysRun = true)
     public void close() {
-        if (Config.HOLD_BROWSER_OPEN) {
-            driver.quit();
-        }
+        driver.quit();
     }
 }

@@ -12,13 +12,13 @@ public class HomePage extends BasePage{
     }
 
     public void fillSearchBox(String nameOfProduct) {
-        CommonActions.waitElementIsVisible(searchBox);
+        CommonActions.waitForElementVisibility(searchBox);
         driver.findElement(searchBox).clear();
         driver.findElement(searchBox).sendKeys(nameOfProduct);
     }
 
     public ResultsOfSearchPage clickOnSearchButton() {
-        CommonActions.waitElementIsVisible(searchButton);
+        CommonActions.waitForElementVisibility(searchButton);
         driver.findElement(searchButton).click();
         return new ResultsOfSearchPage();
     }

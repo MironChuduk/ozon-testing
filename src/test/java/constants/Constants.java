@@ -14,6 +14,6 @@ public class Constants {
      * Constants carrying information about urls used in the framework.
      */
     public static class Urls {
-        public static final String UDEMY_HOME_PAGE = "https://www.ozon.ru/";
+        public static final String OZON_HOME_PAGE = "https://www.ozon.by/";
     }
 }
